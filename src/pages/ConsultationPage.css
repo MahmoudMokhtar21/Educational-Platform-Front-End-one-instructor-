@@ -1,0 +1,146 @@
+.consultation-page {
+  padding: 40px 0 72px;
+}
+
+.consultation-page__hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, .7fr);
+  gap: clamp(28px, 6vw, 84px);
+  align-items: end;
+  min-height: 430px;
+  padding: clamp(30px, 5vw, 64px);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brand-primary) 28%, var(--border-default));
+  border-radius: 28px;
+  background-image:
+    linear-gradient(100deg, color-mix(in srgb, var(--bg-surface) 98%, transparent) 0%, color-mix(in srgb, var(--bg-surface) 94%, transparent) 52%, color-mix(in srgb, var(--bg-surface) 54%, transparent) 100%),
+    url('../assets/financial-consulting-scene.png');
+  background-position: center, right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: var(--card-shadow);
+}
+
+.consultation-page__hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.consultation-page__hero-copy {
+  max-width: 720px;
+}
+
+.consultation-page__eyebrow {
+  margin: 0;
+  color: var(--brand-primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.consultation-page__hero h1 {
+  max-width: 13ch;
+  margin: 12px 0 18px;
+  color: var(--text-primary);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -.055em;
+}
+
+.consultation-page__hero-copy > p:not(.consultation-page__eyebrow) {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.consultation-page__hero-card {
+  display: grid;
+  gap: 12px;
+  max-width: 350px;
+  padding: 22px;
+  border: 1px solid color-mix(in srgb, var(--border-default) 84%, transparent);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-surface) 88%, transparent);
+  box-shadow: 0 18px 38px color-mix(in srgb, var(--text-primary) 10%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.consultation-page__hero-card-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand-primary) 15%, var(--bg-surface));
+  color: var(--brand-primary);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.consultation-page__hero-card strong {
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.consultation-page__hero-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) {
+  .consultation-page__hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    background-image:
+      linear-gradient(180deg, color-mix(in srgb, var(--bg-surface) 98%, transparent) 0%, color-mix(in srgb, var(--bg-surface) 91%, transparent) 58%, color-mix(in srgb, var(--bg-surface) 64%, transparent) 100%),
+      url('../assets/financial-consulting-scene.png');
+    background-position: center, bottom center;
+  }
+
+  .consultation-page__hero h1 {
+    max-width: 16ch;
+  }
+
+  .consultation-page__hero-card {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 720px) {
+  .consultation-page {
+    padding: 24px 0 48px;
+  }
+
+  .consultation-page__hero {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .consultation-page__hero h1 {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+}
+
+@media (max-width: 440px) {
+  .consultation-page__hero {
+    padding: 28px 18px;
+  }
+}
+
+html[dir='rtl'] .consultation-page__hero {
+  background-position: center, left center;
+}
+
+@media (max-width: 960px) {
+  html[dir='rtl'] .consultation-page__hero {
+    background-position: center, bottom center;
+  }
+}

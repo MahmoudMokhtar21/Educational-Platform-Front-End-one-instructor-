@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Local environment files — never commit real env values.
+# (.env.example stays tracked on purpose.)
+.env
+.env.local
+.env.*.local
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db

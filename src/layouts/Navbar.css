@@ -1,0 +1,171 @@
+/* Navigation-only refinement: retains the existing routes and detail menus. */
+.app-header{border-bottom:1px solid var(--border-default);background:color-mix(in srgb,var(--bg-page) 92%,transparent);box-shadow:0 8px 30px color-mix(in srgb,var(--bg-page) 24%,transparent)}
+.app-shell{background:radial-gradient(900px 520px at 5% -10%,color-mix(in srgb,var(--brand-primary) 11%,transparent),transparent 72%),radial-gradient(760px 460px at 96% 28%,color-mix(in srgb,var(--brand-primary) 6%,transparent),transparent 76%)}
+:root[data-theme='light'] .app-shell{background:radial-gradient(940px 520px at 8% -10%,color-mix(in srgb,var(--brand-primary) 10%,transparent),transparent 73%),radial-gradient(820px 500px at 95% 33%,color-mix(in srgb,var(--brand-primary) 5%,transparent),transparent 78%)}
+.app-footer{grid-template-areas:"intro links social" "legal links social" "developer developer developer"}.footer-legal{display:block;text-align:start}.footer-developer{grid-area:developer;justify-self:stretch;max-inline-size:100%;margin:4px 0 0;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--border-default) 82%,transparent);color:var(--text-muted);font-size:.78rem;font-weight:600;letter-spacing:.01em;line-height:1.6;text-align:center;text-shadow:0 1px 10px color-mix(in srgb,var(--text-primary) 14%,transparent)}.footer-developer a{border-radius:6px;color:var(--text-secondary);font-weight:700;text-decoration:none;transition:color .2s ease,text-decoration-color .2s ease}.footer-developer a:hover{color:var(--brand-primary);text-decoration:underline}.footer-developer a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px;text-decoration:underline}
+.app-header-inner{width:min(1280px,100%);min-height:76px;padding-inline:24px;gap:20px}
+.brand{min-width:0;padding:8px 10px;border-radius:12px;transition:background .2s ease,color .2s ease,transform .2s ease}.brand:hover{background:var(--bg-surface-secondary);transform:translateY(-1px)}.app-header .brand-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-header .brand-label{max-inline-size:170px}
+.app-header .app-nav{min-width:0;gap:4px}.app-header .app-nav>a,.app-header .app-nav summary{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1px solid transparent;border-radius:10px;color:var(--text-secondary);font-size:.88rem;font-weight:700;line-height:1;white-space:nowrap;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;cursor:pointer}.app-header .app-nav>a:hover,.app-header .app-nav>a.active,.app-header .app-nav summary:hover,.app-header .app-nav details[open]>summary{border-color:color-mix(in srgb,var(--brand-primary) 25%,var(--border-default));background:color-mix(in srgb,var(--brand-primary) 10%,var(--bg-surface));color:var(--text-primary);transform:translateY(-1px)}
+.app-header .app-nav summary{list-style:none}.app-header .app-nav summary::-webkit-details-marker{display:none}.app-header .app-nav summary::after{content:'⌄';margin-inline-start:7px;color:var(--brand-primary);font-size:1rem;line-height:1;transition:transform .2s ease}.app-header .app-nav details[open]>summary::after{transform:rotate(180deg)}
+.nav-menu-toggle,.nav-mobile-backdrop{display:none}
+.category-menu,.administrator-menu{position:relative}.category-dropdown,.administrator-dropdown{position:absolute;z-index:30;top:calc(100% + 10px);inset-inline-start:0;display:grid;min-width:220px;padding:8px;border:1px solid var(--border-default);border-radius:14px;background:color-mix(in srgb,var(--bg-surface) 96%,transparent);box-shadow:0 18px 40px color-mix(in srgb,var(--bg-page) 38%,transparent);backdrop-filter:blur(16px)}.category-dropdown a,.administrator-dropdown a{display:flex;align-items:center;min-height:38px;padding:0 11px;border-radius:9px;color:var(--text-secondary);font-size:.88rem;font-weight:650;transition:background .2s ease,color .2s ease,transform .2s ease}.category-dropdown a:hover,.category-dropdown a.active,.administrator-dropdown a:hover,.administrator-dropdown a.active{background:var(--bg-surface-secondary);color:var(--text-primary);transform:translateX(2px)}
+.content-menu .category-dropdown{min-width:190px}.administrator-dropdown{inset-inline-end:0;inset-inline-start:auto;min-width:240px}.app-actions{margin-inline-start:auto;padding-inline-start:12px;border-inline-start:1px solid var(--border-default);gap:8px;flex-shrink:0}.app-actions .language-toggle,.app-actions .theme-toggle{min-height:38px;padding:0 10px;border-radius:10px}
+.user-menu{position:relative;flex-shrink:0}.user-menu summary{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 10px;border:1px solid var(--border-default);border-radius:10px;background:var(--bg-surface-secondary);color:var(--text-primary);font-size:.88rem;font-weight:700;list-style:none;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}.user-menu summary::-webkit-details-marker{display:none}.user-menu summary::after{content:'⌄';color:var(--brand-primary);font-size:1rem;line-height:1;transition:transform .2s ease}.user-menu[open]>summary{border-color:color-mix(in srgb,var(--brand-primary) 50%,var(--border-default));background:var(--bg-surface);transform:translateY(-1px)}.user-menu[open]>summary::after{transform:rotate(180deg)}.user-menu__avatar{position:relative;display:grid;place-items:center;width:28px;height:28px;overflow:hidden;border-radius:50%;background:var(--brand-primary);color:var(--bg-surface);font-size:.78rem;font-weight:800}.user-menu__avatar img{position:absolute;inset:0;width:100%;height:100%;border-radius:inherit;object-fit:cover}.user-menu__name{max-inline-size:145px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.user-menu__dropdown{position:absolute;z-index:52;top:calc(100% + 10px);inset-inline-end:0;display:grid;min-width:190px;padding:8px;border:1px solid var(--border-default);border-radius:14px;background:color-mix(in srgb,var(--bg-surface) 96%,transparent);box-shadow:0 18px 40px color-mix(in srgb,var(--bg-page) 38%,transparent);backdrop-filter:blur(16px)}.user-menu__dropdown a,.user-menu__dropdown button{display:flex;align-items:center;width:100%;min-height:38px;padding:0 11px;border:0;border-radius:9px;background:transparent;box-shadow:none;color:var(--text-secondary);font-size:.88rem;font-weight:650;text-align:start;transition:background .2s ease,color .2s ease,transform .2s ease}.user-menu__dropdown a:hover,.user-menu__dropdown a.active,.user-menu__dropdown button:hover{background:var(--bg-surface-secondary);color:var(--text-primary);transform:translateX(2px)}
+.app-header .app-nav a:focus-visible,.app-header .app-nav summary:focus-visible,.category-dropdown a:focus-visible,.administrator-dropdown a:focus-visible,.user-menu summary:focus-visible,.user-menu__dropdown a:focus-visible,.user-menu__dropdown button:focus-visible{outline:3px solid color-mix(in srgb,var(--brand-primary) 45%,transparent);outline-offset:2px}
+.app-nav>a.consultation-nav-link{border-color:color-mix(in srgb,var(--brand-primary) 55%,var(--border-default));background:color-mix(in srgb,var(--brand-primary) 16%,var(--bg-surface));color:var(--text-primary);box-shadow:0 8px 18px color-mix(in srgb,var(--brand-primary) 14%,transparent)}.app-nav>a.consultation-nav-link:hover,.app-nav>a.consultation-nav-link.active{border-color:var(--brand-primary);background:var(--brand-primary);color:var(--bg-surface);box-shadow:0 12px 24px color-mix(in srgb,var(--brand-primary) 24%,transparent);transform:translateY(-2px)}
+.admin-access-note{display:inline-flex;align-items:center;width:max-content;max-width:100%;padding:7px 10px;border:1px solid color-mix(in srgb,var(--brand-primary) 30%,var(--border-default));border-radius:10px;background:color-mix(in srgb,var(--brand-primary) 10%,var(--bg-surface));color:var(--text-secondary);font-size:.86rem;line-height:1.45}
+@media (max-width:1280px){body.navigation-open{overflow:hidden}.app-header .app-header-inner{position:relative;min-height:70px;flex-wrap:nowrap;gap:12px;padding-block:10px}.nav-menu-toggle{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:0 10px;border:1px solid var(--border-default);border-radius:10px;background:var(--bg-surface-secondary);box-shadow:none;color:var(--text-primary);font-size:.84rem}.nav-menu-toggle:hover{background:var(--bg-surface);border-color:var(--brand-primary);transform:none}.nav-menu-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-width:2}.app-header .app-nav{position:fixed;z-index:51;inset-inline:12px;top:80px;bottom:12px;display:none;order:initial;width:auto;align-content:start;flex-direction:column;gap:5px;overflow-x:hidden;overflow-y:auto;padding:12px;border:1px solid var(--border-default);border-radius:16px;background:var(--bg-surface);box-shadow:0 22px 55px color-mix(in srgb,var(--bg-page) 58%,transparent);scrollbar-width:auto}.app-header .app-nav.is-open{display:flex}.app-header .app-nav>a,.app-header .app-nav summary{justify-content:space-between;width:100%;min-height:44px;padding-inline:13px}.app-header .app-nav details{width:100%;position:static}.category-dropdown,.administrator-dropdown{position:static;display:grid;min-width:0;margin:4px 0 7px;padding:5px;border:0;border-radius:10px;background:var(--bg-surface-secondary);box-shadow:none;backdrop-filter:none}.category-dropdown a,.administrator-dropdown a{min-height:40px;padding-inline:12px}.nav-mobile-backdrop{display:block;position:fixed;z-index:50;inset:0;border:0;border-radius:0;background:color-mix(in srgb,var(--bg-page) 58%,transparent);box-shadow:none;cursor:default}.app-actions{margin-inline-start:auto;padding-inline-start:0;border-inline-start:0;gap:8px}}
+@media (max-width:850px){.app-footer{grid-template-areas:"intro" "links" "social" "legal" "developer";justify-items:stretch}.footer-developer{margin-top:8px;padding-top:12px}}
+@media (max-width:620px){.app-header .app-header-inner{padding-inline:14px;gap:8px}.brand{font-size:.92rem}.app-header .brand-label{max-inline-size:84px}.brand-mark{width:28px;height:28px}.app-actions{gap:5px;flex-shrink:0;margin-inline-start:auto;margin-inline-end:0}.app-actions .login-link{display:none}.app-actions .language-toggle,.app-actions .theme-toggle{padding:0 8px;font-size:.78rem}.app-actions>.button{padding:8px 10px;font-size:.82rem}.user-menu summary{padding:0 6px}.user-menu__name,.user-menu summary::after{display:none}.nav-menu-toggle span{display:none}.nav-menu-toggle{padding:0 9px}.app-header .app-nav{top:70px;inset-inline:10px;bottom:10px}}
+@media (prefers-reduced-motion:reduce){.app-shell,.app-nav,.app-nav>a,.app-nav summary,.brand,.user-menu summary,.user-menu__dropdown a,.user-menu__dropdown button{transition:none!important}}
+
+/* Keep native details menus out of the layout until their summary is opened. */
+.category-menu:not([open])>.category-dropdown,.administrator-menu:not([open])>.administrator-dropdown,.user-menu:not([open])>.user-menu__dropdown{display:none}.category-menu[open]>.category-dropdown,.administrator-menu[open]>.administrator-dropdown,.user-menu[open]>.user-menu__dropdown{display:grid}
+
+/* Preserve the existing compact header while preventing controls from overflowing very narrow screens. */
+@media (max-width:390px){.app-header .app-header-inner{min-height:64px;padding-inline:10px;gap:6px}.brand{gap:6px;padding-inline:4px}.app-header .brand-label{max-inline-size:54px}.brand-mark{width:26px;height:26px}.nav-menu-toggle{width:38px;padding:0;justify-content:center}.app-actions{gap:4px}.app-actions .language-toggle,.app-actions .theme-toggle{padding-inline:6px;font-size:.72rem}.app-actions>.button{padding-inline:8px;font-size:.75rem}.user-menu summary{min-width:38px;justify-content:center}.user-menu__avatar{width:26px;height:26px}.user-menu__dropdown{min-width:min(190px,calc(100vw - 20px))}}
+
+
+/* Mobile navigation retains its existing routes while opening as a calm, reachable drawer. */
+@media (max-width:1280px) {
+  .app-header .app-nav {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px) scale(.985);
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app-header .app-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition: opacity .22s ease, transform .22s ease;
+  }
+
+  .app-header .app-nav .category-menu > .category-dropdown,
+  .app-header .app-nav .administrator-menu > .administrator-dropdown {
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height .24s ease, margin .24s ease, padding .24s ease, opacity .16s ease, visibility 0s linear .24s;
+  }
+
+  .app-header .app-nav .category-menu[open] > .category-dropdown,
+  .app-header .app-nav .administrator-menu[open] > .administrator-dropdown {
+    max-height: none;
+    overflow: visible;
+    margin: 4px 0 7px;
+    padding: 5px;
+    opacity: 1;
+    visibility: visible;
+    animation: mobile-submenu-reveal .2s ease both;
+    transition: margin .26s ease, padding .26s ease, opacity .2s ease;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .app-header .app-nav,
+  .app-header .app-nav .category-menu > .category-dropdown,
+  .app-header .app-nav .administrator-menu > .administrator-dropdown {
+    transition: none !important;
+  }
+}
+
+
+@keyframes mobile-submenu-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Mobile drawer is anchored above every page surface, not only the Home hero. */
+.app-header{position:sticky;inset-block-start:0;z-index:1000}
+@media (max-width:1280px){
+  .app-header .app-nav{z-index:1002!important;display:flex!important;max-block-size:calc(100dvh - 92px);isolation:isolate}
+  .nav-mobile-backdrop{z-index:1001!important}
+  .app-header .app-nav.is-open{display:flex!important}
+}
+@media (max-width:620px){
+  .app-header .app-header-inner{align-items:center}
+  .app-header .brand{flex:1 1 auto;min-inline-size:0}
+  .app-header .brand-label{max-inline-size:clamp(116px,42vw,220px);overflow:visible;text-overflow:clip;white-space:normal;line-height:1.15}
+  .app-header .app-nav{top:86px;bottom:10px;max-block-size:none}
+}
+@media (max-width:390px){
+  .app-header .brand-label{max-inline-size:112px;white-space:normal}
+  .app-actions .theme-toggle{display:none}
+}
+/* Final mobile drawer layer: independent of page sections and their stacking contexts. */
+@media (max-width:1280px){
+  .app-header .app-nav{
+    position:fixed!important;
+    z-index:2147483000!important;
+    inset:88px 10px 10px!important;
+    display:flex!important;
+    min-block-size:0;
+    max-block-size:none!important;
+    overflow-y:auto!important;
+    overscroll-behavior:contain;
+    background:var(--bg-surface)!important;
+    border:1px solid var(--border-default)!important;
+    box-shadow:0 24px 64px color-mix(in srgb,var(--bg-page) 72%,transparent)!important;
+  }
+  .app-header .app-nav:not(.is-open){visibility:hidden!important;opacity:0!important;pointer-events:none!important;transform:translateY(-10px) scale(.985)!important}
+  .app-header .app-nav.is-open{visibility:visible!important;opacity:1!important;pointer-events:auto!important;transform:translateY(0) scale(1)!important}
+  .nav-mobile-backdrop{position:fixed!important;z-index:2147482999!important;inset:0!important;background:color-mix(in srgb,var(--bg-page) 68%,transparent)!important}
+}
+@media (max-width:620px){.app-header .app-nav{inset:86px 8px 8px!important}}
+/* Single, explicit mobile-drawer state. A closed menu cannot reserve or collapse layout space. */
+@media (max-width:1280px){
+  .app-header .app-nav{
+    position:fixed!important;
+    top:78px!important;
+    right:10px!important;
+    bottom:10px!important;
+    left:10px!important;
+    z-index:2147483000!important;
+    display:none!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    align-content:start!important;
+    gap:6px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:14px!important;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    visibility:visible!important;
+    opacity:1!important;
+    transform:none!important;
+    background:var(--bg-surface)!important;
+    border:1px solid var(--border-default)!important;
+    border-radius:16px!important;
+    box-shadow:0 24px 64px color-mix(in srgb,var(--bg-page) 72%,transparent)!important;
+  }
+  .app-header .app-nav.is-open{display:flex!important;pointer-events:auto!important}
+  .app-header .app-nav:not(.is-open){pointer-events:none!important}
+  .app-header .app-nav>a,
+  .app-header .app-nav summary{flex:0 0 auto!important;width:100%!important;min-height:46px!important}
+  .app-header .app-nav details{flex:0 0 auto!important;width:100%!important}
+}
+@media (max-width:620px){
+  .app-header .app-nav{top:76px!important;right:8px!important;bottom:8px!important;left:8px!important;padding:12px!important}
+}
+/* `backdrop-filter` establishes a containing block for fixed descendants in
+   Chromium. On phones that made the drawer's bottom edge relative to the
+   header (about 70px tall), collapsing it to a strip. Keep the opaque header
+   surface on mobile and let the drawer be fixed to the viewport. */
+@media (max-width:1280px){
+  .app-header{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+}

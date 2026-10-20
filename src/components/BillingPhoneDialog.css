@@ -1,0 +1,56 @@
+.billing-phone-dialog {
+  width: min(500px, 100%);
+}
+
+.billing-phone-dialog__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-bottom: 8px;
+  padding: 4px 9px;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 13%, var(--color-card));
+  color: var(--color-primary);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
+.billing-phone-dialog__description {
+  margin: 8px 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.billing-phone-dialog__form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.billing-phone-dialog__form label {
+  display: grid;
+  gap: 8px;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.billing-phone-dialog__actions {
+  justify-content: flex-end;
+}
+
+@media (max-width: 520px) {
+  .billing-phone-dialog {
+    padding: 20px;
+  }
+
+  .billing-phone-dialog__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .billing-phone-dialog__actions button {
+    width: 100%;
+  }
+}

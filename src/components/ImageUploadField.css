@@ -1,0 +1,23 @@
+.image-upload-field { display: grid; gap: 10px; min-width: 0; }
+.image-upload-field__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.image-upload-field__heading > div { display: grid; gap: 4px; }
+.image-upload-field__label { color: var(--text-secondary); font-size: .88rem; font-weight: 700; }
+.image-upload-field__help { color: var(--text-muted); font-size: .78rem; font-weight: 500; line-height: 1.45; }
+.image-upload-field__dropzone { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 14px; min-height: 96px; padding: 10px; border: 1px dashed color-mix(in srgb, var(--brand-primary) 46%, var(--border-default)); border-radius: 13px; background: color-mix(in srgb, var(--brand-primary) 5%, var(--bg-surface-secondary)); color: var(--text-secondary); cursor: pointer; transition: border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease; }
+.image-upload-field__dropzone:hover, .image-upload-field__dropzone.is-dragging { border-color: var(--brand-primary); background: color-mix(in srgb, var(--brand-primary) 10%, var(--bg-surface-secondary)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 22%, transparent); transform: translateY(-1px); }
+.image-upload-field__dropzone:focus-within { border-color: var(--brand-primary); outline: 0; box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 35%, transparent); }
+.image-upload-field__dropzone.is-disabled { cursor: not-allowed; opacity: .65; }
+.image-upload-field__dropzone input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.image-upload-field__preview, .image-upload-field__placeholder { width: 76px; height: 76px; border: 1px solid var(--border-default); border-radius: 10px; background: var(--bg-surface); object-fit: cover; }
+.image-upload-field__placeholder { display: grid; place-items: center; color: var(--brand-primary); }
+.image-upload-field__placeholder svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.image-upload-field__copy { display: grid; gap: 4px; min-width: 0; line-height: 1.4; }
+.image-upload-field__copy strong { color: var(--text-primary); font-size: .9rem; }
+.image-upload-field__copy span { color: var(--text-muted); font-size: .78rem; }
+.image-upload-field__clear { min-height: 32px; padding: 6px 9px; border: 1px solid var(--border-default); border-radius: 8px; background: var(--bg-surface); box-shadow: none; color: var(--text-secondary); font-size: .78rem; font-weight: 700; transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease; }
+.image-upload-field__clear:hover:not(:disabled) { border-color: var(--brand-primary); background: var(--bg-surface-secondary); color: var(--text-primary); transform: translateY(-1px); }
+.image-upload-field__clear:focus-visible { outline: 0; box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 35%, transparent); }
+.image-upload-field__file, .image-upload-field__error { margin: 0; font-size: .78rem; line-height: 1.45; }
+.image-upload-field__file { overflow: hidden; color: var(--text-muted); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.image-upload-field__error { color: var(--error); font-weight: 700; }
+@media (max-width: 480px) { .image-upload-field__dropzone { grid-template-columns: 60px minmax(0, 1fr); min-height: 82px; gap: 10px; } .image-upload-field__preview, .image-upload-field__placeholder { width: 60px; height: 60px; } .image-upload-field__heading { align-items: flex-start; flex-direction: column; } }
